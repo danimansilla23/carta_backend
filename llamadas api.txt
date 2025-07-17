@@ -1,0 +1,17 @@
+/api/categorias?sort=orden:asc&fields=nombre,slug&populate[miniatura][fields]=url === traer categorias y su miniatura
+
+
+/api/categorias?filters[slug][$eq]=entradas&populate[productos][fields]=nombre,precio,descripcion,delivery&populate[productos][sort]=orden:asc === traer prodcutos de una categoria			
+
+
+/api/salsas-para-platoes?filters[disponible][$eq]=true&fields[0]=id&fields[1]=nombre&fields[2]=precio === traer salsas disponibles para platos 
+
+
+http://localhost:1337/api/salsas-para-pastas?[fields]=nombre,precio&filters[disponible][$eq]=true === traer salsas disponibles para pastas
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "salsas_para_pastas",
+  "info": {
+    "singularName": "salsas-para-pasta",
+    "pluralName": "salsas-para-pastas",
+    "displayName": "Salsas para pasta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "disponible": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
