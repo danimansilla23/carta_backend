@@ -393,8 +393,6 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
       'api::categoria.categoria'
     > &
       Schema.Attribute.Private;
-    miniatura: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.Required;
     nombre: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;

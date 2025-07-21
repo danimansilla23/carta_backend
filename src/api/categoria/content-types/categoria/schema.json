@@ -20,15 +20,6 @@
       "type": "uid",
       "targetField": "nombre"
     },
-    "miniatura": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "productos": {
       "type": "relation",
       "relation": "oneToMany",
