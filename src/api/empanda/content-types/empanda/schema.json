@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "empandas",
+  "info": {
+    "singularName": "empanda",
+    "pluralName": "empandas",
+    "displayName": "empanda"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "docena": {
+      "type": "integer"
+    },
+    "media": {
+      "type": "integer"
+    }
+  }
+}

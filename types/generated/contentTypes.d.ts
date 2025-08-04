@@ -408,6 +408,35 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEmpandaEmpanda extends Struct.SingleTypeSchema {
+  collectionName: 'empandas';
+  info: {
+    displayName: 'empanda';
+    pluralName: 'empandas';
+    singularName: 'empanda';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    docena: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::empanda.empanda'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInicioInicio extends Struct.SingleTypeSchema {
   collectionName: 'inicios';
   info: {
@@ -1117,6 +1146,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::categoria.categoria': ApiCategoriaCategoria;
+      'api::empanda.empanda': ApiEmpandaEmpanda;
       'api::inicio.inicio': ApiInicioInicio;
       'api::pizza-adicional.pizza-adicional': ApiPizzaAdicionalPizzaAdicional;
       'api::plato-del-dia.plato-del-dia': ApiPlatoDelDiaPlatoDelDia;
