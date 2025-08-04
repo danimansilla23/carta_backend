@@ -411,7 +411,7 @@ export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
 export interface ApiEmpandaEmpanda extends Struct.SingleTypeSchema {
   collectionName: 'empandas';
   info: {
-    displayName: 'empanda';
+    displayName: 'empanada';
     pluralName: 'empandas';
     singularName: 'empanda';
   };
