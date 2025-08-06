@@ -437,6 +437,35 @@ export interface ApiEmpandaEmpanda extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFechaActualizadoFechaActualizado
+  extends Struct.SingleTypeSchema {
+  collectionName: 'fecha_actualizados';
+  info: {
+    displayName: 'Fecha Actualizado';
+    pluralName: 'fecha-actualizados';
+    singularName: 'fecha-actualizado';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fecha: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fecha-actualizado.fecha-actualizado'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInicioInicio extends Struct.SingleTypeSchema {
   collectionName: 'inicios';
   info: {
@@ -1147,6 +1176,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::empanda.empanda': ApiEmpandaEmpanda;
+      'api::fecha-actualizado.fecha-actualizado': ApiFechaActualizadoFechaActualizado;
       'api::inicio.inicio': ApiInicioInicio;
       'api::pizza-adicional.pizza-adicional': ApiPizzaAdicionalPizzaAdicional;
       'api::plato-del-dia.plato-del-dia': ApiPlatoDelDiaPlatoDelDia;

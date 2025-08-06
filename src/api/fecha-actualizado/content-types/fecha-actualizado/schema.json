@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "fecha_actualizados",
+  "info": {
+    "singularName": "fecha-actualizado",
+    "pluralName": "fecha-actualizados",
+    "displayName": "Fecha Actualizado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha": {
+      "type": "datetime"
+    }
+  }
+}
