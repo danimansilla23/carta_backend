@@ -7,7 +7,7 @@
     "displayName": "Fecha Actualizado"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

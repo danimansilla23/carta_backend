@@ -446,7 +446,7 @@ export interface ApiFechaActualizadoFechaActualizado
     singularName: 'fecha-actualizado';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
