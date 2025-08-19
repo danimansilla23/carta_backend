@@ -581,6 +581,7 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     delivery: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     descripcion: Schema.Attribute.Text;
     disponible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    guarnicion: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

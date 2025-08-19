@@ -47,6 +47,10 @@
     "salsa": {
       "type": "boolean",
       "default": false
+    },
+    "guarnicion": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
