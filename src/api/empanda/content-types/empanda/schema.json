@@ -16,6 +16,9 @@
     },
     "media": {
       "type": "integer"
+    },
+    "descuentoMedia": {
+      "type": "integer"
     }
   }
 }
