@@ -373,6 +373,45 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAbiertoCerradoAbiertoCerrado
+  extends Struct.SingleTypeSchema {
+  collectionName: 'abierto_cerrados';
+  info: {
+    displayName: 'Abierto/Cerrado';
+    pluralName: 'abierto-cerrados';
+    singularName: 'abierto-cerrado';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Apertura: Schema.Attribute.Time &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'19:00:00.000'>;
+    Cierre: Schema.Attribute.Time &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.DefaultTo<'23:30:00.000'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Delivery: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::abierto-cerrado.abierto-cerrado'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
   collectionName: 'categorias';
   info: {
@@ -1176,6 +1215,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::abierto-cerrado.abierto-cerrado': ApiAbiertoCerradoAbiertoCerrado;
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::empanda.empanda': ApiEmpandaEmpanda;
       'api::fecha-actualizado.fecha-actualizado': ApiFechaActualizadoFechaActualizado;

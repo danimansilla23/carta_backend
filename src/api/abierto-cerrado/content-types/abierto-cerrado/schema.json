@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "abierto_cerrados",
+  "info": {
+    "singularName": "abierto-cerrado",
+    "pluralName": "abierto-cerrados",
+    "displayName": "Abierto/Cerrado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Delivery": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "Apertura": {
+      "type": "time",
+      "required": true,
+      "unique": true,
+      "default": "19:00:00.000"
+    },
+    "Cierre": {
+      "type": "time",
+      "required": true,
+      "unique": true,
+      "default": "23:30:00.000"
+    }
+  }
+}
